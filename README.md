@@ -1,6 +1,9 @@
 # Kompress
 Kompress app repository
 
+# Avisos
+> Welton e tauan ler readme da pasta mobile pelo github, Lembrar de criar uma nova branch ao implementar cada nova pagina, NAO COMITAR NA MASTER, CRIEM A PROPRIA BRANCH E COMITEM NELA, EX: branch Login para pagina de login
+
 # Trello
 > Link : https://trello.com/b/tbLb3XEB/kompress
 

@@ -1,16 +1,13 @@
-# mobile
+# Kompress
 
-A new Flutter project.
+Aplicação compress desenvolvida em Flutter
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Com o Flutter instalado, para começar a desenvolver seguir seguinte esquema de pastas
 
-A few resources to get you started if this is your first Flutter project:
+### Componentes
+> Componentes criados devem se localizar em /app/components
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Telas
+> As paginas devem ser criadas na pasta /app/pages e a seguir importada em /app/myapp e escolher um nome para a rota adicionada, (Exemplo de como fazer isso esta no proprio arquivo myapp)
