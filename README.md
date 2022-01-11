@@ -7,6 +7,7 @@ Kompress app repository
 ## Colaborators
 > gabrielCaio : email.caiogabriel@gmail.com (Owner)
 > tauanrafael : rafael.tauan@hotmail.com
+> Welthanos : welthanos_dev@outlook.com
 
 ## UI Design
 > https://www.figma.com/file/BKPpDgKC2b5qdKCVPiqSrJ/Projeto-Meu-Estoque?node-id=0%3A1
