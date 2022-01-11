@@ -1,6 +1,9 @@
 # Kompress
 Kompress app repository
 
+## Colaborators
+> gabrielCaio : email.caiogabriel@gmail.com (Owner)
+
 ## UI Design
 > https://www.figma.com/file/BKPpDgKC2b5qdKCVPiqSrJ/Projeto-Meu-Estoque?node-id=0%3A1
 
