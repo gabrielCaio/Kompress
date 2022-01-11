@@ -1,6 +1,9 @@
 # Kompress
 Kompress app repository
 
+# Trello
+> Link : https://trello.com/b/tbLb3XEB/kompress
+
 ## Colaborators
 > gabrielCaio : email.caiogabriel@gmail.com (Owner)
 > tauanrafael : rafael.tauan@hotmail.com
