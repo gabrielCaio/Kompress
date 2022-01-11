@@ -1,6 +1,9 @@
 # Kompress
 Kompress app repository
 
+# Avisos
+> NÂO COMITAR NA BRANCH MASTER!!!!!!!!!!!
+
 # Trello
 > Link : https://trello.com/b/tbLb3XEB/kompress
 
