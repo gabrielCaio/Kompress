@@ -1,4 +1,4 @@
-import 'package:Kompress/app/myapp.dart';
+import 'package:kompress/app/myapp.dart';
 import 'package:flutter/material.dart';
 
 // Aplicação sendo importada do arquivo MyApp
