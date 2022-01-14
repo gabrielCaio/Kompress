@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // Imports das paginas das aplicações
-import 'package:mobile/app/pages/login.dart';
-import 'package:mobile/app/pages/register.dart';
+import 'package:Kompress/app/pages/login.dart';
+import 'package:Kompress/app/pages/register.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
