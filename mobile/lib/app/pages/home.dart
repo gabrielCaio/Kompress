@@ -3,6 +3,7 @@ import 'package:kompress/app/pages/home_page.dart';
 import 'package:kompress/app/pages/my_pantry.dart';
 import 'package:kompress/app/pages/notifications.dart';
 import 'package:kompress/app/pages/profile.dart';
+import 'package:kompress/app/utils/theme.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -41,37 +42,43 @@ class _HomeState extends State<Home> {
       ),
 
       // Bottom bar
-      bottomNavigationBar: BottomNavigationBar(
-        // Props of navigation bar
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: const Color.fromRGBO(118, 29, 242, 0.8),
+          primaryColor: CustomTheme.white,
+        ),
+        child: BottomNavigationBar(
+          // Props of navigation bar
 
-        selectedIconTheme: const IconThemeData(color: Colors.white),
-        unselectedIconTheme: const IconThemeData(color: Colors.grey),
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        onTap: (index) => _onItemTap(index),
-        currentIndex: _currentIndex,
-        backgroundColor: const Color(0x7B61FFFF),
+          selectedIconTheme: const IconThemeData(color: Colors.white),
+          unselectedIconTheme: IconThemeData(color: Colors.grey[400]),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          onTap: (index) => _onItemTap(index),
+          currentIndex: _currentIndex,
+          // backgroundColor: Colors.blue,
 
-        // Content of Navigation bar
+          // Content of Navigation bar
 
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 30),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.kitchen, size: 30),
-            label: "MyPantry",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications, size: 30),
-            label: "Notifications",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle, size: 30),
-            label: "Profile",
-          ),
-        ],
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, size: 30),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.kitchen, size: 30),
+              label: "MyPantry",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications, size: 30),
+              label: "Notifications",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle, size: 30),
+              label: "Profile",
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kompress/app/components/avatar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,9 +13,17 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.grey,
       body: Center(
-        child: Text("HomePage"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text("HomePage"),
+            Avatar(name: "Ana Barreto"),
+          ],
+        ),
       ),
     );
   }

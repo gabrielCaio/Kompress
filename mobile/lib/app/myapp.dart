@@ -8,20 +8,22 @@ import 'package:kompress/app/pages/notifications.dart';
 import 'package:kompress/app/pages/profile.dart';
 import 'package:kompress/app/pages/register.dart';
 
+// Theme import
+import 'package:kompress/app/utils/theme.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Tirar aquela faixa de debug que fica quando roda em desenvolvimento
+      // Removing debug banner
       debugShowCheckedModeBanner: false,
+      // App title
       title: "Kompress",
-      // Essa propriedade diz qual pagina vai ser a primeira a ser carregada
-      // ao iniciar a aplicação (Por enquanto esta a de login)
+      // This will be the firts page the app will load, make changes accordingly
       initialRoute: '/home',
-      // Aqui ficam todas as paginas da aplicação, a medida que forem adicionadas
-      // atualizar essa propriedade para poder navegar entre as paginas segue ex:
+      // ALl routes of the aplication
       routes: {
         '/login': (context) => const Login(),
         '/register': (context) => const Register(),
@@ -30,7 +32,10 @@ class MyApp extends StatelessWidget {
         '/notifications': (context) => const Notifications(),
         '/profile': (context) => const Profile(),
       },
+      // Defining the home page, ### May be not necessary ## TOREVIEW
       home: const Home(),
+      // Setting app theme
+      theme: CustomTheme.mainTheme,
     );
   }
 }
