@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kompress/app/components/avatar.dart';
+import 'package:kompress/app/components/confirm_button.dart';
+import 'package:kompress/app/components/item_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,7 +23,7 @@ class _HomePageState extends State<HomePage>
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Text("HomePage"),
-            Avatar(name: "Ana Barreto"),
+            ItemCard(),
           ],
         ),
       ),
