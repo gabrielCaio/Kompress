@@ -49,8 +49,8 @@ class AvatarWithImage extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.4,
       height: MediaQuery.of(context).size.width * 0.4,
       decoration: BoxDecoration(
-          image: const DecorationImage(
-              image: AssetImage("/assets/background.png")),
+          image:
+              const DecorationImage(image: AssetImage("assets/background.png")),
           shape: BoxShape.circle,
           color: Colors.white,
           border: Border.all(color: Colors.white, width: 2),

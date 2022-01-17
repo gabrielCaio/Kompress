@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kompress/app/components/avatar.dart';
-import 'package:kompress/app/components/confirm_button.dart';
 import 'package:kompress/app/components/item_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +21,10 @@ class _HomePageState extends State<HomePage>
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Text("HomePage"),
-            ItemCard(),
+            ItemCard(
+              foodName: "Teste",
+              expireDate: "17/01/2022",
+            ),
           ],
         ),
       ),
