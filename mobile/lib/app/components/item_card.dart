@@ -4,13 +4,13 @@ import 'package:kompress/app/utils/theme.dart';
 class ItemCard extends StatelessWidget {
   // foodName is required, quantity by default is 0, and expireData is undefined
   // if not informed, it will take its default values
-  final String foodName;
+  final String productName;
   final String quantity;
   final String expireDate;
 
   const ItemCard(
       {Key? key,
-      this.foodName = "Undefined",
+      this.productName = "Undefined",
       this.quantity = "0",
       this.expireDate = "undefined"})
       : super(key: key);
@@ -92,7 +92,7 @@ class ItemCard extends StatelessWidget {
 
           // Bottom Text, Food name
           Text(
-            foodName,
+            productName,
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

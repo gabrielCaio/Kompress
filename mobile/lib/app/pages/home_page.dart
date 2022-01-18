@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kompress/app/components/item_card.dart';
+import 'package:kompress/app/components/notification_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,17 +15,16 @@ class _HomePageState extends State<HomePage>
     super.build(context);
     return Scaffold(
       backgroundColor: Colors.grey,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          // crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text("HomePage"),
-            ItemCard(
-              foodName: "Teste",
-              expireDate: "17/01/2022",
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text("HomePage"),
+              NotificationCard(),
+            ],
+          ),
         ),
       ),
     );
