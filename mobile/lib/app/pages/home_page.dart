@@ -22,7 +22,10 @@ class _HomePageState extends State<HomePage>
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text("HomePage"),
-              NotificationCard(),
+              NotificationCard(
+                title: "Alerta",
+                notificationText: "Welton esta a trolar, cuidado!",
+              ),
             ],
           ),
         ),
