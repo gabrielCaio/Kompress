@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kompress/app/components/notification_card.dart';
+import 'package:kompress/app/components/tag_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -21,11 +21,8 @@ class _HomePageState extends State<HomePage>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Text("HomePage"),
-              NotificationCard(
-                title: "Alerta",
-                notificationText: "Welton esta a trolar, cuidado!",
-              ),
+              Text("Home Page"),
+              TagCard(),
             ],
           ),
         ),

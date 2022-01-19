@@ -49,10 +49,7 @@ class NotificationCard extends StatelessWidget {
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
-                  Text(
-                    notificationText,
-                    textAlign: TextAlign.left,
-                  ),
+                  Text(notificationText, textAlign: TextAlign.left),
                 ],
               ),
             ),
