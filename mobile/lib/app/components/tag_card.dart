@@ -19,6 +19,7 @@ class TagCard extends StatelessWidget {
     return Container(
       width: size,
       height: size,
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: CustomTheme.white,
         boxShadow: const [
