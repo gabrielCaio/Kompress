@@ -28,30 +28,29 @@ class NotificationCard extends StatelessWidget {
       }
     }
 
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: CustomTheme.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Expanded(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5.0),
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: CustomTheme.white,
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: Row(
           children: [
             getIcon(),
             const SizedBox(width: 20),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(notificationText, textAlign: TextAlign.left),
-                ],
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
+                Text(notificationText, textAlign: TextAlign.left),
+              ],
             ),
           ],
         ),
