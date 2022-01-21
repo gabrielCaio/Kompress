@@ -23,9 +23,7 @@ class _AvatarState extends State<Avatar> {
       children: [
         widget.type == 1
             ? AvatarWithImage(size: size)
-            : widget.type == 2
-                ? EditAvatar(size: size)
-                : AvatarWithoutImage(size: size),
+            : AvatarWithoutImage(size: size),
         const SizedBox(height: 20),
         Text(
           widget.name,
@@ -75,41 +73,6 @@ class AvatarWithImage extends StatelessWidget {
 class AvatarWithoutImage extends StatelessWidget {
   final double size;
   const AvatarWithoutImage({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white,
-          border: Border.all(color: Colors.white, width: 2),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromRGBO(255, 255, 255, 0.5),
-              spreadRadius: 2,
-              blurRadius: 6,
-              offset: Offset(0, 6),
-            ),
-          ]),
-      child: const Center(
-        child: Icon(
-          Icons.person,
-          size: 80,
-          color: CustomTheme.black,
-        ),
-      ),
-    );
-  }
-}
-
-class EditAvatar extends StatelessWidget {
-  final double size;
-  const EditAvatar({
     Key? key,
     required this.size,
   }) : super(key: key);

@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 // Imports das paginas das aplicações
 import 'package:kompress/app/pages/home.dart';
 import 'package:kompress/app/pages/login.dart';
-import 'package:kompress/app/pages/my_pantry.dart';
-import 'package:kompress/app/pages/notifications.dart';
-import 'package:kompress/app/pages/profile.dart';
 import 'package:kompress/app/pages/register.dart';
+import 'package:kompress/app/pages/edit_profile.dart';
 
 // Theme import
 import 'package:kompress/app/utils/theme.dart';
@@ -28,9 +26,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/register': (context) => const Register(),
         '/home': (context) => const Home(),
-        '/mypantry': (context) => const MyPantry(),
-        '/notifications': (context) => const Notifications(),
-        '/profile': (context) => const Profile(),
+        '/edit': (context) => const EditProfile(),
       },
       // Defining the home page, ### May be not necessary ## TOREVIEW
       home: const Home(),

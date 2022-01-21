@@ -23,6 +23,18 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
 
     double textSpace = 20;
 
+    void handleEditPress() {
+      Navigator.of(context).pushNamed("/edit");
+    }
+
+    void handleBackupPress() {
+      debugPrint("Backup");
+    }
+
+    void handleLogoutPress() {
+      debugPrint("Logout");
+    }
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: SizedBox.expand(
@@ -43,11 +55,29 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
                 const Avatar(name: "Ana Barreto", type: 1),
                 Column(
                   children: [
-                    Text("Editar Perfil", style: txt),
+                    GestureDetector(
+                      onTap: handleEditPress,
+                      child: Text(
+                        "Editar Perfil",
+                        style: txt,
+                      ),
+                    ),
                     SizedBox(height: textSpace),
-                    Text("Backup de dados", style: txt),
+                    GestureDetector(
+                      onTap: handleBackupPress,
+                      child: Text(
+                        "Backup de dados",
+                        style: txt,
+                      ),
+                    ),
                     SizedBox(height: textSpace),
-                    Text("Sair", style: txt),
+                    GestureDetector(
+                      onTap: handleLogoutPress,
+                      child: Text(
+                        "Sair",
+                        style: txt,
+                      ),
+                    ),
                   ],
                 ),
               ],
