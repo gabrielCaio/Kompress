@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kompress/app/pages/details.dart';
 
 // Imports das paginas das aplicações
 import 'package:kompress/app/pages/home.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // App title
       title: "Kompress",
-      // This will be the firts page the app will load, make changes accordingly
+      // This will be the first page the app will load, make changes accordingly
       initialRoute: '/home',
       // ALl routes of the aplication
       routes: {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const Register(),
         '/home': (context) => const Home(),
         '/edit': (context) => const EditProfile(),
+        '/details': (context) => const Details(),
       },
       // Defining the home page, ### May be not necessary ## TOREVIEW
       home: const Home(),
