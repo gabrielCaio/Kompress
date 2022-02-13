@@ -17,7 +17,7 @@ class Avatar extends StatefulWidget {
 class _AvatarState extends State<Avatar> {
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width * 0.3;
+    double size = MediaQuery.of(context).size.width * 0.4;
 
     return Column(
       children: [

@@ -22,6 +22,11 @@ class CustomTheme {
   static const Color gradientStart = Color.fromRGBO(91, 4, 212, 1);
   static const Color gradientEnd = Color.fromRGBO(27, 1, 64, 1);
 
+  static OutlineInputBorder searchBarStyle = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(20),
+    borderSide: const BorderSide(width: 0, style: BorderStyle.none),
+  );
+
   static ThemeData get mainTheme {
     return ThemeData(
       primaryColor: purple,
