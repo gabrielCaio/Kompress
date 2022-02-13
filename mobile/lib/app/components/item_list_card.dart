@@ -10,7 +10,7 @@ class ItemListCard extends StatelessWidget {
   final String quantity;
   final String expireDate;
   final String measureUnity;
-  final Function? onPress;
+  final Function onPress;
   // Send CardType.expired, CardType.ok or CardType.caution
   // for changing the color of the item on list
 
@@ -22,7 +22,7 @@ class ItemListCard extends StatelessWidget {
     this.quantity = "0",
     this.expireDate = "undefined",
     this.measureUnity = "und(s)",
-    this.onPress,
+    required this.onPress,
   }) : super(key: key);
 
   @override
@@ -47,7 +47,7 @@ class ItemListCard extends StatelessWidget {
         case CardType.caution:
           return Icon(Icons.warning, color: borderColor, size: 40);
         default:
-          return const SizedBox();
+          return Icon(Icons.check, color: borderColor, size: 40);
       }
     }
 
@@ -57,7 +57,7 @@ class ItemListCard extends StatelessWidget {
     );
 
     return InkWell(
-      onTap: () => onPress,
+      onTap: () => onPress(),
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: height,
@@ -96,13 +96,19 @@ class ItemListCard extends StatelessWidget {
                         productName,
                         textAlign: TextAlign.left,
                         style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: CustomTheme.black,
+                        ),
                       ),
                       const SizedBox(height: 15),
                       Text(
                         "Validade: $expireDate\nQuantidade: $quantity $measureUnity",
                         textAlign: TextAlign.left,
-                        style: const TextStyle(fontSize: 12),
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: CustomTheme.black,
+                        ),
                       ),
                     ],
                   ),

@@ -50,11 +50,15 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
             padding:
                 const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                // Avatar Image
                 const Avatar(name: "Ana Barreto", type: 1),
+
+                // Botoes de acoes da pagina
                 Column(
                   children: [
+                    // Editar perfil
                     GestureDetector(
                       onTap: handleEditPress,
                       child: Text(
@@ -62,7 +66,11 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
                         style: txt,
                       ),
                     ),
+
+                    // margin
                     SizedBox(height: textSpace),
+
+                    // Backup de dados
                     GestureDetector(
                       onTap: handleBackupPress,
                       child: Text(
@@ -70,7 +78,11 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
                         style: txt,
                       ),
                     ),
+
+                    // Margin
                     SizedBox(height: textSpace),
+
+                    // Sair
                     GestureDetector(
                       onTap: handleLogoutPress,
                       child: Text(
@@ -78,7 +90,9 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
                         style: txt,
                       ),
                     ),
+                    // Fim children
                   ],
+                  // Fim Coluna
                 ),
               ],
             ),

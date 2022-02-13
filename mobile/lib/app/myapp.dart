@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       // App title
       title: "Kompress",
       // This will be the first page the app will load, make changes accordingly
-      initialRoute: '/home',
+      initialRoute: '/login',
       // ALl routes of the aplication
       routes: {
         '/login': (context) => const Login(),
