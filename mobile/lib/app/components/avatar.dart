@@ -17,13 +17,13 @@ class Avatar extends StatefulWidget {
 class _AvatarState extends State<Avatar> {
   @override
   Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.width * 0.3;
+
     return Column(
       children: [
         widget.type == 1
-            ? const AvatarWithImage()
-            : widget.type == 2
-                ? const EditAvatar()
-                : const AvatarWithoutImage(),
+            ? AvatarWithImage(size: size)
+            : AvatarWithoutImage(size: size),
         const SizedBox(height: 20),
         Text(
           widget.name,
@@ -39,18 +39,22 @@ class _AvatarState extends State<Avatar> {
 }
 
 class AvatarWithImage extends StatelessWidget {
+  final double size;
   const AvatarWithImage({
     Key? key,
+    required this.size,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.4,
-      height: MediaQuery.of(context).size.width * 0.4,
+      width: size,
+      height: size,
       decoration: BoxDecoration(
-          image:
-              const DecorationImage(image: AssetImage("assets/background.png")),
+          image: const DecorationImage(
+            image: AssetImage("assets/imageAux/Woman.jpg"),
+            fit: BoxFit.cover,
+          ),
           shape: BoxShape.circle,
           color: Colors.white,
           border: Border.all(color: Colors.white, width: 2),
@@ -67,48 +71,17 @@ class AvatarWithImage extends StatelessWidget {
 }
 
 class AvatarWithoutImage extends StatelessWidget {
+  final double size;
   const AvatarWithoutImage({
     Key? key,
+    required this.size,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.4,
-      height: MediaQuery.of(context).size.width * 0.4,
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white,
-          border: Border.all(color: Colors.white, width: 2),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromRGBO(255, 255, 255, 0.5),
-              spreadRadius: 2,
-              blurRadius: 6,
-              offset: Offset(0, 6),
-            ),
-          ]),
-      child: const Center(
-        child: Icon(
-          Icons.person,
-          size: 80,
-          color: CustomTheme.black,
-        ),
-      ),
-    );
-  }
-}
-
-class EditAvatar extends StatelessWidget {
-  const EditAvatar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.4,
-      height: MediaQuery.of(context).size.width * 0.4,
+      width: size,
+      height: size,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,

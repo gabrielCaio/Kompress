@@ -24,9 +24,33 @@ class CustomTheme {
 
   static ThemeData get mainTheme {
     return ThemeData(
-      // primaryColor: purple,
-      textTheme: GoogleFonts.domineTextTheme(),
+      primaryColor: purple,
+      hintColor: white,
+      textTheme: TextTheme(
+        headline1: GoogleFonts.domine(color: white),
+        headline2: GoogleFonts.domine(color: white),
+        bodyText1: GoogleFonts.domine(color: white),
+        bodyText2: GoogleFonts.domine(color: white),
+        subtitle1: GoogleFonts.domine(color: white),
+        subtitle2: GoogleFonts.domine(color: white),
+        caption: GoogleFonts.domine(color: white),
+        button: GoogleFonts.domine(color: white),
+        overline: GoogleFonts.domine(color: white),
+      ),
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      inputDecorationTheme: const InputDecorationTheme(
+        hintStyle: TextStyle(fontSize: 18, color: white),
+        errorBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: lightRed)),
+        border:
+            UnderlineInputBorder(borderSide: BorderSide(color: pastelGreen)),
+        enabledBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: pastelGreen)),
+        focusedBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: pastelGreen)),
+        disabledBorder:
+            UnderlineInputBorder(borderSide: BorderSide(color: pastelGreen)),
+      ),
     );
   }
 }
