@@ -38,7 +38,7 @@ class _EditProfileState extends State<EditProfile> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -74,6 +74,7 @@ class _EditProfileState extends State<EditProfile> {
                   child: const TextField(
                     decoration: InputDecoration(
                       hintText: "Nome",
+                      contentPadding: EdgeInsets.only(left: 5),
                     ),
                   ),
                 ),
