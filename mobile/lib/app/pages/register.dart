@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
           ),
           SizedBox.expand(
             child: Image.asset(
-              'assets/background.png',
+              'assets/Background.png',
               fit: BoxFit.cover,
             ),
           ),

@@ -38,7 +38,7 @@ class _LoginPageState extends State<Login> {
           ),
           SizedBox.expand(
             child: Image.asset(
-              'assets/background.png',
+              'assets/Background.png',
               fit: BoxFit.cover,
             ),
           ),
