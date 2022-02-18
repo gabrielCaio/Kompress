@@ -10,30 +10,28 @@ class Profile extends StatefulWidget {
   State<Profile> createState() => _ProfileState();
 }
 
-class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    super.build(context);
-
     TextStyle txt = const TextStyle(
       fontSize: 16,
       decoration: TextDecoration.underline,
       color: CustomTheme.white,
     );
 
-    double textSpace = 20;
+    // double textSpace = 20;
 
     void handleEditPress() {
       Navigator.of(context).pushNamed("/edit");
     }
 
-    void handleBackupPress() {
-      debugPrint("Backup");
-    }
+    // void handleBackupPress() {
+    //   debugPrint("Backup");
+    // }
 
-    void handleLogoutPress() {
-      debugPrint("Logout");
-    }
+    // void handleLogoutPress() {
+    //   debugPrint("Logout");
+    // }
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -53,7 +51,7 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 // Avatar Image
-                const Avatar(name: "Ana Barreto", type: 1),
+                const Avatar(),
 
                 // Botoes de acoes da pagina
                 Column(
@@ -68,28 +66,28 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
                     ),
 
                     // margin
-                    SizedBox(height: textSpace),
+                    // SizedBox(height: textSpace),
 
-                    // Backup de dados
-                    GestureDetector(
-                      onTap: handleBackupPress,
-                      child: Text(
-                        "Backup de dados",
-                        style: txt,
-                      ),
-                    ),
+                    // // Backup de dados
+                    // GestureDetector(
+                    //   onTap: handleBackupPress,
+                    //   child: Text(
+                    //     "Backup de dados",
+                    //     style: txt,
+                    //   ),
+                    // ),
 
-                    // Margin
-                    SizedBox(height: textSpace),
+                    // // Margin
+                    // SizedBox(height: textSpace),
 
-                    // Sair
-                    GestureDetector(
-                      onTap: handleLogoutPress,
-                      child: Text(
-                        "Sair",
-                        style: txt,
-                      ),
-                    ),
+                    // // Sair
+                    // GestureDetector(
+                    //   onTap: handleLogoutPress,
+                    //   child: Text(
+                    //     "Sair",
+                    //     style: txt,
+                    //   ),
+                    // ),
                     // Fim children
                   ],
                   // Fim Coluna
@@ -101,7 +99,4 @@ class _ProfileState extends State<Profile> with AutomaticKeepAliveClientMixin {
       ),
     );
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

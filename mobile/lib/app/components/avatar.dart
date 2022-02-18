@@ -1,32 +1,51 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:kompress/app/services/shared_preferences.dart';
 import 'package:kompress/app/utils/theme.dart';
 
 class Avatar extends StatefulWidget {
-  final String name;
-  final int type;
-  // Type 0 for AvatarWithoutImage
-  // Type 1 for AvatarWithImage
-  // Type 2 for EditAvatar
-
-  const Avatar({Key? key, required this.name, this.type = 0}) : super(key: key);
+  const Avatar({Key? key}) : super(key: key);
 
   @override
   State<Avatar> createState() => _AvatarState();
 }
 
 class _AvatarState extends State<Avatar> {
+  File? image;
+  String name = "";
+
+  @override
+  void initState() {
+    super.initState();
+    // Getting username from sp
+    name = UserPreferences.getUsername() ?? "";
+
+    // Getting image from sp
+    String path = UserPreferences.getImage() ?? "";
+    if (path != "") {
+      File tmpFile = File(path);
+      image = tmpFile;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width * 0.4;
 
     return Column(
       children: [
-        widget.type == 1
-            ? AvatarWithImage(size: size)
+        // Avatar image
+        image != null
+            ? AvatarWithImage(size: size, image: image!)
             : AvatarWithoutImage(size: size),
+
+        // Margin
         const SizedBox(height: 20),
+
+        // Username
         Text(
-          widget.name,
+          name,
           style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -40,9 +59,12 @@ class _AvatarState extends State<Avatar> {
 
 class AvatarWithImage extends StatelessWidget {
   final double size;
+  final File image;
+
   const AvatarWithImage({
     Key? key,
     required this.size,
+    required this.image,
   }) : super(key: key);
 
   @override
@@ -51,8 +73,8 @@ class AvatarWithImage extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage("assets/imageAux/Woman.jpg"),
+          image: DecorationImage(
+            image: FileImage(image),
             fit: BoxFit.cover,
           ),
           shape: BoxShape.circle,
