@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kompress/app/components/confirm_button.dart';
+import 'package:kompress/app/services/shared_preferences.dart';
 import 'package:kompress/app/utils/theme.dart';
 
 class EditProfile extends StatefulWidget {
@@ -16,12 +17,28 @@ class EditProfile extends StatefulWidget {
 class _EditProfileState extends State<EditProfile> {
   final ImagePicker _picker = ImagePicker();
   File? image;
+  String name = "";
+  final TextEditingController nameController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    name = UserPreferences.getUsername() ?? "";
+    nameController.text = name;
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width * 0.3;
-    String name = "Ana Barreto";
+    // Size of the Avatar container
+    double size = MediaQuery.of(context).size.width * 0.4;
 
+    // Getting the picture from user gallery
     Future handleChangePicture() async {
       try {
         XFile? tmpImage = await _picker.pickImage(source: ImageSource.gallery);
@@ -38,10 +55,18 @@ class _EditProfileState extends State<EditProfile> {
       }
     }
 
-    void handleConfirm() {
-      debugPrint("Confirm");
+    // Function called when save button pressed
+    Future handleConfirm() async {
+      await UserPreferences.setUsername(nameController.text);
+
+      if (image != null) {
+        await UserPreferences.setImage(image!.path);
+      }
+
+      Navigator.of(context).pop();
     }
 
+    // Function called when cancel button pressed
     void handleCancel() {
       Navigator.of(context).pop();
     }
@@ -84,11 +109,22 @@ class _EditProfileState extends State<EditProfile> {
                             ),
                           ]),
                       child: Center(
-                        // TODO : Estilizar a imagem q ta feio
+                        // Checking if image exists
                         child: image != null
-                            ? Image.file(image!)
+                            // Avatar image
+                            ? ClipOval(
+                                child: SizedBox(
+                                  width: size,
+                                  height: size,
+                                  child: Image.file(
+                                    image!,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              )
+                            // Icon to change image
                             : const Icon(
-                                Icons.add_a_photo,
+                                Icons.add_photo_alternate,
                                 size: 60,
                                 color: CustomTheme.black,
                               ),
@@ -100,8 +136,9 @@ class _EditProfileState extends State<EditProfile> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width - 20,
                     height: 40,
-                    child: const TextField(
-                      decoration: InputDecoration(
+                    child: TextField(
+                      controller: nameController,
+                      decoration: const InputDecoration(
                         hintText: "Nome",
                         contentPadding: EdgeInsets.only(left: 5),
                       ),
